@@ -1,0 +1,43 @@
+[
+  {
+    "style": "Cyberpunk",
+    "description": "High-tech dystopian city mood, neon signage, rainy streets, strong contrast and reflective surfaces",
+    "prompt_keywords": ["cyberpunk", "neon lights", "futuristic city", "wet asphalt", "chromatic aberration"],
+    "color_palette": "electric blue, magenta, violet, deep black",
+    "lighting": "neon rim light, volumetric fog, hard highlights",
+    "composition": "dynamic angle, layered foreground-midground-background"
+  },
+  {
+    "style": "Dark Fantasy",
+    "description": "Mythic but grim atmosphere with ancient ruins, cursed artifacts and dramatic weather",
+    "prompt_keywords": ["dark fantasy", "ancient ruins", "ornate armor", "grim atmosphere", "epic scene"],
+    "color_palette": "desaturated teal, bone white, rust red",
+    "lighting": "moody low key, god rays, torch light",
+    "composition": "hero-centered composition with environmental storytelling"
+  },
+  {
+    "style": "Ink Wash",
+    "description": "Traditional ink painting influence with expressive brushwork and poetic negative space",
+    "prompt_keywords": ["ink wash", "brush strokes", "minimalist", "eastern aesthetics", "paper texture"],
+    "color_palette": "black ink, warm gray, subtle sepia",
+    "lighting": "soft diffuse lighting",
+    "composition": "asymmetric balance with large blank space"
+  },
+  {
+    "style": "Pixel Art",
+    "description": "Retro game visual with clear pixel blocks, readable silhouettes and limited palette",
+    "prompt_keywords": ["pixel art", "16-bit", "limited palette", "clean silhouette", "retro game"],
+    "color_palette": "limited saturated palette",
+    "lighting": "simple directional lighting",
+    "composition": "side-view or top-down clear gameplay framing"
+  },
+  {
+    "style": "Realistic",
+    "description": "Photoreal rendering style with physically plausible materials and cinematic camera behavior",
+    "prompt_keywords": ["photorealistic", "ultra detailed", "realistic materials", "cinematic", "high fidelity"],
+    "color_palette": "natural tones with controlled accent colors",
+    "lighting": "physically based global illumination",
+    "composition": "rule of thirds with depth of field"
+  }
+]
+

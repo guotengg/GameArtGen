@@ -1,0 +1,2 @@
+"""GameArtGen application package."""
+

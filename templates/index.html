@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameArtGen</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 980px; }
+    textarea { width: 100%; min-height: 80px; }
+    .row { margin-top: 12px; }
+    img { max-width: 100%; margin-top: 12px; border: 1px solid #ddd; }
+    .history-item { border: 1px solid #ddd; margin-top: 10px; padding: 8px; }
+    .status-bar { background: #f5f7fa; border: 1px solid #d9dee5; padding: 8px 10px; border-radius: 6px; }
+    .status-bar code { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h1>GameArtGen</h1>
+  <p>输入中文描述，系统会用RAG增强成Stable Diffusion风格Prompt。</p>
+
+  <div class="row">
+    <label for="description">角色/场景描述</label>
+    <textarea id="description" placeholder="例如：设计一个赛博朋克风格的女性刺客角色"></textarea>
+  </div>
+
+  <div class="row">
+    <button id="generateBtn">生成</button>
+    <button id="loadHistoryBtn">查看历史</button>
+  </div>
+
+  <div class="row"><strong>增强Prompt：</strong><pre id="promptBox"></pre></div>
+  <div class="row"><strong>参考来源：</strong><span id="sourceBox"></span></div>
+  <div class="row">
+    <img id="preview" alt="生成图" />
+  </div>
+
+  <div class="row">
+    <button id="likeBtn">点赞</button>
+    <button id="dislikeBtn">点踩</button>
+  </div>
+
+  <div class="row status-bar">
+    <strong>当前生成后端：</strong>
+    <code id="statusBackend">-</code>
+    <strong>模型：</strong>
+    <code id="statusModelId">-</code>
+    <strong>设备：</strong>
+    <code id="statusDevice">-</code>
+  </div>
+
+  <h2>生成历史</h2>
+  <div id="history"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
+
