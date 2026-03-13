@@ -48,8 +48,13 @@ class StableDiffusionImageGenerator:
     backend = "stable-diffusion"
 
     def __init__(self) -> None:
+        import os
         import torch
         from diffusers import StableDiffusionPipeline
+
+        # 使用国内镜像（hf-mirror.com），解决大陆无法访问 HuggingFace 的问题
+        if config.HF_ENDPOINT and config.HF_ENDPOINT != "0":
+            os.environ.setdefault("HF_ENDPOINT", config.HF_ENDPOINT)
 
         self.model_id = config.SD_MODEL_ID
         dtype = torch.float16 if torch.cuda.is_available() else torch.float32

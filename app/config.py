@@ -18,3 +18,7 @@ SD_GUIDANCE = float(os.getenv("GAG_SD_GUIDANCE", "7.5"))
 DEFAULT_NEGATIVE_PROMPT = os.getenv(
     "GAG_NEGATIVE_PROMPT", "blurry, low quality, ugly, deformed"
 )
+
+# 国内 HuggingFace 镜像，设置 GAG_HF_ENDPOINT=0 可禁用
+HF_ENDPOINT = os.getenv("GAG_HF_ENDPOINT", "https://hf-mirror.com")
+
