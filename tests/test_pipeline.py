@@ -12,6 +12,13 @@ class TestRag(unittest.TestCase):
         docs = kb.retrieve("赛博朋克 女刺客", top_k=2)
         self.assertTrue(len(docs) > 0)
 
+    def test_chinese_ancient_style_prefers_ink_wash(self):
+        kb = StyleKnowledgeBase.from_json(KNOWLEDGE_FILE)
+        docs = kb.retrieve("中国古风男性刺客，水墨风", top_k=3)
+        self.assertTrue(len(docs) >= 1)
+        self.assertEqual(docs[0]["style"], "Ink Wash")
+        self.assertLessEqual(len(docs), 2)
+
 
 class TestPipeline(unittest.TestCase):
     def test_generate_returns_required_fields(self):

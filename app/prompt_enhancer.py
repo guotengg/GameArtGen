@@ -8,8 +8,14 @@ def enhance_prompt_with_rag(user_input: str, style_docs: list[dict]) -> str:
     if not base:
         return ""
 
-    styles = [d["style"] for d in style_docs]
-    keywords = merge_keywords([d.get("keywords", []) for d in style_docs], max_size=18)
+    high_conf_styles = [d["style"] for d in style_docs if d.get("score", 0) >= 2.0]
+    fallback_styles = [d["style"] for d in style_docs[:1]]
+    styles = high_conf_styles or fallback_styles
+
+    keyword_docs = [d for d in style_docs if d.get("score", 0) >= 1.0]
+    if not keyword_docs and style_docs:
+        keyword_docs = [style_docs[0]]
+    keywords = merge_keywords([d.get("keywords", []) for d in keyword_docs], max_size=12)
 
     quality_tokens = [
         "highly detailed",
@@ -27,4 +33,3 @@ def enhance_prompt_with_rag(user_input: str, style_docs: list[dict]) -> str:
     parts.append(", ".join(quality_tokens))
 
     return ", ".join(parts)
-
