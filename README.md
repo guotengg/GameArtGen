@@ -1,6 +1,6 @@
 # GameArtGen
 
-基于 RAG 增强 Prompt 的游戏概念图生成系统（Flask版）。
+游戏概念图生成系统（Flask版）。
 
 ## 功能
 - 风格知识库检索（RAG）
